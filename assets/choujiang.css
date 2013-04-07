@@ -1,0 +1,123 @@
+
+
+
+#slotpop { width:298px; height:407px; z-index:99999; overflow:visible;margin: 70px auto 0; position: relative; }
+#slot_top { width:298px; height:44px; background:url(images/slottop_bg.png) no-repeat 0 0; }
+* html #slot_top {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slottop_bg.png"); background:none; }
+#slotbox { width:298px; height:355px; background:url(images/slot_bg.png) no-repeat 0 0; }
+#slot_bot { width:298px; height:8px; background:url(images/slotbot_bg.png) no-repeat 0 0; line-height:0; font-size:0; }
+* html #slot_bot {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotbot_bg.png"); background:none; }
+.slotbox { position:relative; }
+.slotbar { user-select:none;-moz-user-select:none; width:51px; height:142px; background:url(images/slotbar.png) no-repeat 0 0; z-index:1000000; cursor:pointer; position:absolute; right:-51px; top:85px; }
+* html .slotbar {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotbar.png"); background:none; }
+.slotbar_on { background:url(images/slotbar_on.png) no-repeat 0 0; cursor:default; }
+* html .slotbar_on {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotbar_on.png"); background:none; }
+.slotbar_hide { z-index:99997; }
+#slotclose { width:26px; height:27px; background:url(images/slot_close.png) no-repeat 0 0; z-index:1000000; cursor:pointer; position:absolute; right:-9px; top:21px; }
+* html #slotclose {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slot_close.png"); background:none; }
+#slotop_info { height:40px; color:#dc1010; font-weight:bold; text-align:center; font-size:14px; padding-top:13px; }
+#slotop_infop { background-color:#ffedae; margin:0 20px; line-height:16px; }
+#playbox { height:165px; padding-top:14px; padding-left:29px; }
+.slotline { float:left; margin-right:5px; width:74px; padding-right:4px; height:125px; background:url(images/slotnum_box.png) no-repeat 0 0; overflow:hidden; position:relative; display:block; }
+.slotline img { width:74px; height:125px; line-height:125px; display:block; }
+.line { width:74px; height:125px; line-height:125px; display:block; }
+.line1 { background:url(slot/slotline1.png) no-repeat 0 0; }
+* html .line1 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline1.png"); background:none; }
+.line2 { background:url(slot/slotline2.png) no-repeat 0 0; }
+* html .line2 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline2.png"); background:none; }
+.line3 { background:url(slot/slotline3.png) no-repeat 0 0; }
+* html .line3 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline3.png"); background:none; }
+.line4 { background:url(slot/slotline4.png) no-repeat 0 0; }
+* html .line4 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline4.png"); background:none; }
+.line5 { background:url(slot/slotline5.png) no-repeat 0 0; }
+* html .line5 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline5.png"); background:none; }
+.line6 { background:url(slot/slotline6.png) no-repeat 0 0; }
+* html .line6 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline6.png"); background:none; }
+#slotbot_info { padding:0 0 0 12px; }
+.slottip { color:#dc1011; line-height:22px;background:url(images/slotinfo_bg.png) no-repeat 0 0; width:253px; margin:10px 0 0 0; padding: 10px; height: 106px; overflow:hidden; }
+.slottip dt { height:auto; padding:10px 10px 0 10px; }
+.ready_p {  padding:20px 0 23px 40px; }
+.slotlook { color:#333; line-height:14px; padding:12px 0 0 10px; }
+#slotip { width:182px; height:47px; background:url(images/slotip_bg.png) no-repeat 0 0; margin-right:6px; line-height:42px; overflow:hidden; padding:0 8px; color:#dc1011; }
+#slotlook { width:70px; height:40px; cursor:pointer; }
+.slot_ginfo { line-height:18px; color:#333; padding:5px 0 0 5px; width:268px; }
+.slot_ginfo img { margin-right:15px; }
+.slot_ginfo p { padding-top:4px; }
+.slot_ginfo span { color:#fa2b22; }
+.slotget_btn { padding:10px 0 0 80px; }
+#nihong1 { top:86px; left:57px; }
+#nihong2 { top:255px; left:57px; }
+.slotsound { position:absolute; display:none; top:0px; left:0px; height:1px; width:1px; }
+.pop { width:490px; position:absolute; display:none; z-index:999999; }
+.pop dt { line-height:0; font-size:0; }
+.pop_rt { width:8px; height:8px; background:url(images/pop_bg.png) no-repeat -7px 0; }
+.pop_top { width:474px; border-top:1px solid #a5e2f7; height:7px; background-color:#1e9cce; }
+.pop_lt { width:8px; height:8px; background:url(images/pop_bg.png) no-repeat 0 0; }
+.pop_bot { }
+.pop_rb { width:8px; height:10px; background:url(images/pop_bg.png) no-repeat -6px -8px; }
+.pop_bot { width:474px; height:10px; background:url(images/pop_bg.png) repeat-x 0px -18px; }
+.pop_lb { width:8px; height:10px; background:url(images/pop_bg.png) no-repeat 0 -8px; }
+.pop dd { border-left:1px solid #a5e2f7; border-right:1px solid #a5e2f7; background-color:#fff; }
+.pop_bar { background-color:#1e9cce; padding:4px 10px 5px 10px; font-size:14px; color:#fff; }
+.pop_bar p { padding:5px 0 5px 10px; font-weight:bold; }
+.pop_close { position:absolute; width:20px; height:23px; background:url(images/pop_close.png) no-repeat left top; z-index:100; top:-8px; right:-6px; cursor:pointer; }
+* html .pop_close {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/pop_close.png"); background:none; }
+.pop_in { height:auto; padding:12px 5px 30px 22px; }
+.pop_in p { text-align:center; padding-top:15px; line-height:14px; font-size:14px; }
+.popbtn { cursor:pointer; }
+.popedit { position:relative; }
+#popsd_title { position:absolute; top:3px; left:11px; color:#999; }
+#popbg { display:none; position:absolute; top:0; left:0; background-color:#666; z-index:99998; }
+.yao_btn { display:inline-block; border:none; width:79px; height:32px; line-height:26px; *line-height:26px !important;
+*line-height:28px;
+color:#666; background:url(images/copylink_btn.png) no-repeat left top; text-align:center; cursor:pointer; font-size:12px; color:#fff; }
+.pub_tip { position:relative; border:1px solid #ecd08c; background-color:#fffee0; color:#666; padding:12px;line-height:22px; }
+.pub_tip b { color:#ff0000; font-weight:normal; }
+.pub_tip span { position:absolute; right:6px; top:6px; display:block; height:13px; width:13px; background:url(images/close.png) no-repeat left top; cursor:pointer; }
+.pub_tip p { font-family:microsoft yahei; font-size:16px; font-weight:bold; }
+.scroll_div { background:url(images/totop.gif) no-repeat top center; bottom:200px; position: fixed; left:1000px; z-index:1; _position: absolute; _bottom: auto; _top: expression( eval(document.compatMode && document.compatMode=='CSS1Compat') ? documentElement.scrollTop + (documentElement.clientHeight - this.clientHeight) - 1 : document.body.scrollTop + (document.body.clientHeight - this.clientHeight) - 1);
+height:111px; width:32px; display:none; color:#FFFFFF; cursor:pointer; }
+.selsay li { float:left; display:block; margin-right:5px; cursor:pointer; font-size:14px; line-height:16px; padding:4px 4px 2px 4px; }
+.selsay_off { color:#1e9cce; background-color:#fff; }
+.selsay_on { color:#fff; background-color:#1e9cce; }
+
+
+
+body {
+	background: url("images/header.png") fixed repeat-x top center #DCEFF6;
+    color: #666666;
+    font: 12px/14px Arial,"宋体",Helvetica,Sans-Serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+#footer {
+	background: url(images/footer.png) repeat-x bottom center;
+	position: absolute;
+	bottom: 0;
+	height: 400px;
+	width: 100%;
+}
+
+
+#author {
+	margin: 10px;
+	text-align: center;
+}
+
+#author a{
+	color: #222;
+}
