@@ -18,7 +18,7 @@ if(!$_G['uid']){
    // 判断用户是否登录
    //Header("Location: $url"); 
    //showmessage('抱歉，您尚未登录，无法进行此操作', $url, array(), array('refreshtime ' => 0));
-   $data['result'] = -1;
+   $data['error'] = -1;
    $data['message'] = "尚未登录";
    echo json_encode($data);
 }
@@ -28,9 +28,12 @@ else
     $uid = $_G['uid'];
     
     //获取抽奖结果
-    $return_result = -mt_rand(-5,6);
+    $return_result = mt_rand(-1,6);
     if($return_result > 0)
     {
+        //预先扣掉10个精弘币
+        update_jhb($uid,-10);
+        //然后开始抽奖
         $update_jhb = choujiang($uid);
         update_jhb($uid,$update_jhb);
         $return_message = '恭喜您获得'.strval($update_jhb).'个精弘币';
