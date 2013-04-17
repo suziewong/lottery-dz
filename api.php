@@ -1,6 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin:*");
-header("Content-type: application/json");
+//header("Content-type: application/json");
 
 require '../source/class/class_core.php';
 
@@ -18,7 +18,7 @@ if(!$_G['uid']){
    // 判断用户是否登录
    //Header("Location: $url"); 
    //showmessage('抱歉，您尚未登录，无法进行此操作', $url, array(), array('refreshtime ' => 0));
-   $data['error'] = -1;
+   $data['error'] = 'true';
    $data['message'] = "尚未登录";
    echo json_encode($data);
 }
@@ -26,7 +26,7 @@ else
 {
     //拿到用户uid
     $uid = $_G['uid'];
-    
+    $username = $_G['username'];
     //获取抽奖结果
     $return_result = mt_rand(-1,6);
     if($return_result > 0)
@@ -43,6 +43,8 @@ else
         update_jhb($uid,-10);
         $return_message = "10个精弘币已经是浮云了";
     }
+    //var_dump($_G);
+    intodb($uid,$username,$return_result,$return_message);
     $data = array();
     $data['result'] = $return_result;
     $data['message'] = $return_message;
@@ -90,4 +92,24 @@ function choujiang($uid)
 
     return $result;
 }
-   
+
+/*
+    每个人的抽奖记录和结果都存数据库
+*/
+function intodb($uid,$username,$result,$message)
+{
+
+    include_once 'class.mysql.php';
+    include_once 'config.inc.php';
+    $db = new mysql(HOST,USERNAME,PASSWORD,DBNAME,'lottery_action');
+
+    $arr = array();
+    $arr['uid']     = $uid;
+    $arr['username'] = $username;
+    $arr['result']  = $result;
+    $arr['message'] = $message;
+    $arr['time']    = time();
+    $data = $db->insert($arr);
+
+}
+
