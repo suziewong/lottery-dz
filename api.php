@@ -1,6 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin:*");
-//header("Content-type: application/json");
+header("Content-type: application/json");
 
 require '../source/class/class_core.php';
 
@@ -18,7 +18,7 @@ if(!$_G['uid']){
    // 判断用户是否登录
    //Header("Location: $url"); 
    //showmessage('抱歉，您尚未登录，无法进行此操作', $url, array(), array('refreshtime ' => 0));
-   $data['error'] = 'true';
+   $data['error'] = '1';
    $data['message'] = "尚未登录";
    echo json_encode($data);
 }
@@ -28,7 +28,7 @@ else
     $uid = $_G['uid'];
     $username = $_G['username'];
     //获取抽奖结果
-    $return_result = mt_rand(-1,6);
+    $return_result = mt_rand(-10,6);
     if($return_result > 0)
     {
         //预先扣掉10个精弘币
@@ -41,13 +41,15 @@ else
     else
     {
         update_jhb($uid,-10);
-        $return_message = "10个精弘币已经是浮云了";
+        $return_result = -1;
+        $return_message = "对不起,没有中奖！";
     }
     //var_dump($_G);
-    intodb($uid,$username,$return_result,$return_message);
+    //intodb($uid,$username,$return_result,$return_message);
     $data = array();
-    $data['result'] = $return_result;
+    $data['code'] = $return_result;
     $data['message'] = $return_message;
+
     //echo "我当前的精弘币:".get_jhb($uid);
     //var_dump($data);
     echo json_encode($data);
@@ -88,7 +90,7 @@ function choujiang($uid)
     $now_jhb = get_jhb($uid);
 
     //待考量的随机数
-    $result =  mt_rand(0,100) - ($now_jhb / 100) % 100 + time() % 5;
+    $result =  mt_rand(0,100) - ($now_jhb % 10) + time() % 10;
 
     return $result;
 }
