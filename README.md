@@ -21,3 +21,22 @@ Discuz! 抽奖程序
 * [Discuz! X2.5数据字典](http://dev.discuz.org/wiki/index.php?title=Discuz!_X2.5%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8)
 
 
+#### 表结构
+
+CREATE TABLE `lottery_action` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `uid` varchar(50) NOT NULL COMMENT 'uid',
+  `username` varchar(50) NOT NULL COMMENT '用户名',
+  `result`   varchar(70)  NOT NULL DEFAULT '' COMMENT '中奖码',
+  `message`  varchar(70)  NOT NULL DEFAULT '' COMMENT '具体信息',
+  `time`  int  NOT NULL DEFAULT '0' COMMENT '抽奖时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='行为表';
+
+### 关于抽奖策略
+
+1-6 种中奖码，关于概率问题，抽奖图片（可以换）可以继续讨论
+目前的概率和精弘币总数，时间等有关系
+
+充分测试一下吧
+

@@ -35,8 +35,8 @@ else
         //update_jhb($uid,-10);
         //然后开始抽奖
         $update_jhb = choujiang($uid);
-        $update_jhb = $update_jhb -10;
-        update_jhb($uid,$update_jhb);
+        
+        update_jhb($uid,$update_jhb-10);
         $return_message = '恭喜您获得'.strval($update_jhb).'个精弘币';
     }
     else
