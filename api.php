@@ -32,9 +32,10 @@ else
     if($return_result > 0)
     {
         //预先扣掉10个精弘币
-        update_jhb($uid,-10);
+        //update_jhb($uid,-10);
         //然后开始抽奖
         $update_jhb = choujiang($uid);
+        $update_jhb = $update_jhb -10;
         update_jhb($uid,$update_jhb);
         $return_message = '恭喜您获得'.strval($update_jhb).'个精弘币';
     }
@@ -45,7 +46,7 @@ else
         $return_message = "对不起,没有中奖！";
     }
     //var_dump($_G);
-    //intodb($uid,$username,$return_result,$return_message);
+    intodb($uid,$username,$return_result,$return_message);
     $data = array();
     $data['code'] = $return_result;
     $data['message'] = $return_message;
@@ -102,7 +103,7 @@ function intodb($uid,$username,$result,$message)
 {
 
     include_once 'class.mysql.php';
-    include_once 'config.inc.php';
+    include_once 'config.php';
     $db = new mysql(HOST,USERNAME,PASSWORD,DBNAME,'lottery_action');
 
     $arr = array();
