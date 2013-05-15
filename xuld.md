@@ -8,6 +8,10 @@ CREATE TABLE `lottery_action` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='行为表';
 
+CREATE TABLE `lottery_jp` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  PRIMARY KEY (`id`)  `num`  int NOT NULL COMMENT '奖品数目',
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='奖品数目表';
 
 1. get_current_user()
 2. pay_jhb(value)

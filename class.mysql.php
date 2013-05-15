@@ -176,4 +176,12 @@ class mysql{
 		}
 		return $data;
 	}
+	/*
+		特有函数，负责减少num数目
+	*/
+	public function reduce($id)
+	{
+		$result = $this->query("update $this->table set num=num-1 where id=$id");
+		return $result;
+	}
 }

@@ -44,6 +44,23 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingM
 .line6 { background:url(slot/slotline6.png) no-repeat 0 0; }
 * html .line6 {
 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline6.png"); background:none; }
+.line7 { background:url(slot/slotline7.png) no-repeat 0 0; }
+* html .line7 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline7.png"); background:none; }
+
+.line9 { background:url(slot/slotline9.png) no-repeat 0 0; }
+* html .line9 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline9.png"); background:none; }
+.line10 { background:url(slot/slotline10.png) no-repeat 0 0; }
+* html .line10 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline10.png"); background:none; }
+.line11 { background:url(slot/slotline11.png) no-repeat 0 0; }
+* html .line11 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline11.png"); background:none; }
+.line8 { background:url(slot/slotline8.png) no-repeat 0 0; }
+* html .line8 {
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="imgs/public/slotline8.png"); background:none; }
+
 #slotbot_info { padding:0 0 0 12px; }
 .slottip { color:#dc1011; line-height:22px;background:url(images/slotinfo_bg.png) no-repeat 0 0; width:253px; margin:10px 0 0 0; padding: 10px; height: 106px; overflow:hidden; }
 .slottip dt { height:auto; padding:10px 10px 0 10px; }

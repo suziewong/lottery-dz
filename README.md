@@ -33,10 +33,18 @@ CREATE TABLE `lottery_action` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='行为表';
 
+CREATE TABLE `lottery_jp` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  PRIMARY KEY (`id`)  `num`  int NOT NULL COMMENT '奖品数目',
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='奖品数目表';
+
+
 ### 关于抽奖策略
 
-1-6 种中奖码，关于概率问题，抽奖图片（可以换）可以继续讨论
-目前的概率和精弘币总数，时间等有关系
+0-11 种中奖码
 
 充分测试一下吧
 
+### 上线的情况
+
+这是浙江工业大学精弘网络与环保协会合作的一个网站
