@@ -32,21 +32,32 @@ else
     $username = $_G['username'];
     
     //获取抽奖结果
-    $randnum = mt_rand(0,1000);
-    $randnum = 1000;
+    $randnum = mt_rand(-1000,1000);
+    //$randnum = 1000;
     $data =array();
     $uidcjnum = cjnum($uid);
     //预先扣掉10个精弘币
-    update_jhb($uid,-10);
-    if($randnum > 885 && $uidcjnum < 500)
+    if($uidcjnum <= 10)
     {
+        update_jhb($uid,-10);
+    }
+    else
+    {
+
+    }
+    
+    if($randnum > 885 && $uidcjnum <= 10)
+    {
+
         //开始抽奖
         //三等奖
+        
         if($randnum > 885 && $randnum <= 945)
         {
             // 迷你金属书签 
             if($randnum <= 905 )
             {
+
                 $data = jpresult(1);
             }
             // A5初品笔记本 
@@ -64,6 +75,7 @@ else
             {
                 $data = jpresult(4);
             }
+
         }
         //二等奖
         if($randnum > 945 && $randnum <= 975)
@@ -113,19 +125,25 @@ else
         
         update_jhb($uid,$update_jhb-10);
         $return_message = '恭喜您获得'.strval($update_jhb).'个精弘币';*/
-    }
-    elseif($uidcjnum > 50)
-    {
-        $data['code'] = -1;
-        $data['message'] = "你已经达到抽奖次数上限50次了";
+
     }
     else
     {
-        update_jhb($uid,-10);
-        $data['code'] = -1;
-        $data['message'] = "对不起,没有中奖！";
+       
+        if($uidcjnum > 10)
+        {
+            $data['code'] = -1;
+            $data['message'] = "你已经达到抽奖次数上限10次了";
+        }
+        else
+        {
+
+            $data['code'] = -1;
+            $data['message'] = "对不起,没有中奖！";
+        }
     }
     //var_dump($_G);
+    //var_dump($data);
     $return_result = $data['code'];
     $return_message = $data['message'];
     intodb($uid,$username,$return_result,$return_message);
