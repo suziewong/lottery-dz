@@ -41,10 +41,20 @@ CREATE TABLE `lottery_jp` (
 
 ### 关于抽奖策略
 
-0-11 种中奖码
+1. get_current_user()
+2. pay_jhb(value)
+3. check_user_login()
+4. check_session_avaliable()
 
-充分测试一下吧
+API: 
+1. api.php
+返回值：
+    jsonp({index: 2}) // 返回当前抽中的号码索引。(暂时定为0-6共 7个奖品。)
+其它错误情况返回:
+     jsonp({message: }) 
 
-### 上线的情况
+API.php文件中通过匹配rand得到的数字进行获奖查询,并对相应数据库进行数量修改，保证抽奖结果所需奖品的数量不会超出提供的数量。
 
-这是浙江工业大学精弘网络与环保协会合作的一个网站
+#### Copyright
+
+这是浙江工业大学精弘网络

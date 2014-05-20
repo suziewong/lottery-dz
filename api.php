@@ -4,7 +4,7 @@ header("Content-type: application/json");
 
 require '../source/class/class_core.php';
 include_once 'class.mysql.php';
-include_once 'config.php';
+include_once 'config.inc.php';
 
 
 $discuz = & discuz_core::instance();
