@@ -1,6 +1,8 @@
 Discuz! 抽奖程序
 =====================
 
+#### 准备着手
+对数据库表进行更改，增添奖品信息增删的接口。
 
 #### 说明
 
@@ -38,7 +40,9 @@ CREATE TABLE `lottery_jp` (
   PRIMARY KEY (`id`)  `num`  int NOT NULL COMMENT '奖品数目',
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='奖品数目表';
 
-
+### 奖品素材
+存在于 ./assets/slot/ 中  
+按照 slotlineX.png (X为编号，例 1,2,3,4,5,...)
 ### 关于抽奖策略
 
 1. get_current_user()
@@ -47,9 +51,9 @@ CREATE TABLE `lottery_jp` (
 4. check_session_avaliable()
 
 API: 
-1. api.php
+js请求API.php
 返回值：
-    jsonp({index: 2}) // 返回当前抽中的号码索引。(暂时定为0-6共 7个奖品。)
+    jsonp({index: 2}) // 返回当前抽中的号码索引。
 其它错误情况返回:
      jsonp({message: }) 
 
@@ -57,4 +61,4 @@ API.php文件中通过匹配rand得到的数字进行获奖查询,并对相应�
 
 #### Copyright
 
-这是浙江工业大学精弘网络
+浙江工业大学精弘网络
