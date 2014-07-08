@@ -1,6 +1,8 @@
 Discuz! 抽奖程序
 =====================
 
+#### 准备着手
+对数据库表进行更改，增添奖品信息增删的接口。
 
 #### 说明
 
@@ -38,13 +40,25 @@ CREATE TABLE `lottery_jp` (
   PRIMARY KEY (`id`)  `num`  int NOT NULL COMMENT '奖品数目',
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='奖品数目表';
 
-
+### 奖品素材
+存在于 ./assets/slot/ 中  
+按照 slotlineX.png (X为编号，例 1,2,3,4,5,...)
 ### 关于抽奖策略
 
-0-11 种中奖码
+1. get_current_user()
+2. pay_jhb(value)
+3. check_user_login()
+4. check_session_avaliable()
 
-充分测试一下吧
+API: 
+js请求API.php
+返回值：
+    jsonp({index: 2}) // 返回当前抽中的号码索引。
+其它错误情况返回:
+     jsonp({message: }) 
 
-### 上线的情况
+API.php文件中通过匹配rand得到的数字进行获奖查询,并对相应数据库进行数量修改，保证抽奖结果所需奖品的数量不会超出提供的数量。
 
-这是浙江工业大学精弘网络与环保协会合作的一个网站
+#### Copyright
+
+浙江工业大学精弘网络
